@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="quizViewModel"
+            type="com.oopcourse.vocabliz.ui.wordlist.QuizWordListViewModel" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/quizCardBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quiz.QuizFragment"
+    android:background="@drawable/background_test"
+    >
+
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/orbitron"
+        android:text="@{quizViewModel.time.toString()}"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentWordTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="68dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="@{quizViewModel.currentWord.text}"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <TextView
+        android:id="@+id/translateToTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif-monospace"
+        android:text='@{"Translate to: " + quizViewModel.chosenLanguage}'
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/userGuessInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentWordTextView" />
+
+    <EditText
+        android:id="@+id/userGuessInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/currentWordTextView"
+        app:layout_constraintVertical_bias="0.226" />
+
+    <Button
+        android:id="@+id/skipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/skip"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userGuessInput"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/cardNumber"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text='@{quizViewModel.currentWordIndex+1 + "/" + quizViewModel.listForQuiz.size()}'
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skipButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

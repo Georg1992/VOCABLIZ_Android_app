@@ -1,0 +1,12 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Design">
+    <!-- Customize your theme here. -->
+        <item name="buttonStyle" >@style/Widget.AppCompat.Button.Borderless</item>
+    </style>
+
+
+
+
+
+</resources>

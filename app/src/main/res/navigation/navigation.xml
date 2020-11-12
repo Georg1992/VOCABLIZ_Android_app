@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    android:label="nav"
+    app:startDestination="@id/titleFragment">
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.oopcourse.vocabliz.ui.TitleFragment"
+        android:label="TitleFragment"
+        tools:layout="@layout/title_fragment">
+        <action
+            android:id="@+id/action_titleFragment_to_quizWordListActivity"
+            app:destination="@id/quizWordListActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizWordListActivity"
+        android:name="com.oopcourse.vocabliz.ui.wordlist.QuizWordListActivity"
+        android:label="QuizWordListActivity"
+        tools:layout="@layout/quiz_word_list_activity">
+        <action
+            android:id="@+id/action_quizWordListActivity_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_quizWordListActivity_to_titleFragment2"
+            app:destination="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.oopcourse.vocabliz.ui.quiz.QuizFragment"
+        android:label="QuizFragment"
+        tools:layout="@layout/quiz_fragment">
+        <action
+            android:id="@+id/action_quizFragment_to_quizResultFragment"
+            app:destination="@id/quizResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizResultFragment"
+        android:name="com.oopcourse.vocabliz.ui.quiz.QuizResultFragment"
+        android:label="QuizResultFragment"
+        tools:layout="@layout/quizz_result_fragment">
+        <action
+            android:id="@+id/action_quizResultFragment_to_quizWordListActivity"
+            app:destination="@id/quizWordListActivity"
+            app:enterAnim="@anim/fragment_fade_enter" />
+    </fragment>
+</navigation>

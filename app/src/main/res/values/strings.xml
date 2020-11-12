@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ProjectApp</string>
+    <string name="LearnWords">Learn Words</string>
+    <string name="BookPicture">BookPicture</string>
+    <string name="MyResults">My Results</string>
+    <string name="TestString">TestWord</string>
+    <string name="userinput">Input</string>
+    <string name="inputHint">_ _ _ _ _</string>
+    <string name="play_qiuz">PLAY QIUZ</string>
+    <string name="generateButton">Learn Words</string>
+    <string name="shuffle">shuffle</string>
+    <string name="SelectLang">Select Language</string>
+    <string name="cardNumber">Card:1</string>
+    <string name="appName">VOCABLIZ</string>
+    <string name="skip">Skip</string>
+</resources>
